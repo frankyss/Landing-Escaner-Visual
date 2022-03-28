@@ -1,0 +1,128 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: consolas;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: black;
+}
+
+.escaner{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 500px;
+    height: 500px;
+}
+
+.escaner .visual{
+    position: relative;
+    width: 300px;
+    height: 300px;
+    background: url(../imgs/eye_scanner.png);
+    background-size: 300px;
+}
+
+.escaner .visual::before{
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: url(../imgs/eye_scanner2.png);
+    background-size: 300px;
+    animation: animate 4s ease-in-out infinite;
+}
+
+@keyframes animate{
+    0%,100%{
+        height: 0%;
+    }
+    50%{
+        height: 100%;
+    }
+}
+
+.escaner .visual::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background: rgb(168, 159, 27);
+    border-radius: 8px;
+    filter: drop-shadow(0 0 20px rgb(168, 159, 27)) drop-shadow(0 0 60px rgb(168, 159, 27)) ;
+    animation: animate_line 4s ease-in-out infinite;
+}
+
+@keyframes animate_line{
+    0%,100%{
+        top: 0%;
+    }
+    50%{
+        top: 100%;
+    }
+}
+
+h3{
+    letter-spacing: 2px;
+    color:white;
+    margin-top: 20px;
+    font-size: 26px;
+    filter: drop-shadow(0 0 20px rgb(168, 159, 27)) drop-shadow(0 0 60px rgb(168, 159, 27)) ;
+    animation: animate_text 0.8s steps(1) infinite;
+}
+
+@keyframes animate_text  {
+    0%,100%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+    }
+}
+
+.btn{
+    left: 0;
+    margin-right: 10px;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    font-family: consolas;
+    font-weight: 900;
+    letter-spacing: 2px;
+    font-size: 18px;
+    margin-top: 20px;
+    width: 100px;
+    height: 50px;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: inset -2px -2px 2px 2px rgba(0, 0, 0, 0.6);
+
+}
+.btn:hover{
+    margin-right: 10px;
+    left: 0;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    font-family: consolas;
+    font-weight: 900;
+    letter-spacing: 2px;
+    font-size: 18px;
+    margin-top: 20px;
+    width: 100px;
+    height: 50px;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 5px;
+    background-color: rgb(0, 0, 0);
+    box-shadow:  3px 3px 3px 3px rgba(255, 255, 255, 0.7);
+}
